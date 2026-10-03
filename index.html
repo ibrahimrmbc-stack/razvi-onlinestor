@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>RAZVI BROTHER MOBILE CENTER</title>
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f5f6f8;
+    color:#222;
+}
+
+/* HEADER */
+header{
+    background:#111;
+    color:white;
+    padding:18px 5%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:100;
+}
+
+.logo{
+    font-size:22px;
+    font-weight:bold;
+}
+
+.logo span{
+    color:#25D366;
+}
+
+.whatsapp-top{
+    background:#25D366;
+    color:white;
+    padding:10px 16px;
+    border-radius:25px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+/* HERO */
+.hero{
+    background:linear-gradient(135deg,#111,#333);
+    color:white;
+    text-align:center;
+    padding:60px 20px;
+}
+
+.hero h1{
+    font-size:38px;
+    margin-bottom:12px;
+}
+
+.hero p{
+    font-size:18px;
+    color:#ddd;
+}
+
+.hero button{
+    margin-top:25px;
+    padding:13px 25px;
+    border:none;
+    border-radius:25px;
+    background:#25D366;
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+/* PRODUCTS */
+.container{
+    width:92%;
+    max-width:1200px;
+    margin:40px auto;
+}
+
+.section-title{
+    text-align:center;
+    font-size:28px;
+    margin-bottom:30px;
+}
+
+.products{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+    gap:22px;
+}
+
+.product{
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.product:hover{
+    transform:translateY(-5px);
+}
+
+.product img{
+    width:100%;
+    height:220px;
+    object-fit:contain;
+    background:#fafafa;
+    padding:15px;
+}
+
+.product-info{
+    padding:18px;
+}
+
+.product h3{
+    font-size:19px;
+    margin-bottom:8px;
+}
+
+.description{
+    color:#666;
+    font-size:14px;
+    min-height:40px;
+}
+
+.price{
+    font-size:21px;
+    font-weight:bold;
+    margin:15px 0;
+}
+
+.order-btn{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:8px;
+    background:#111;
+    color:white;
+    cursor:pointer;
+    font-size:15px;
+}
+
+.order-btn:hover{
+    background:#25D366;
+}
+
+/* MODAL */
+.modal{
+    display:none;
+    position:fixed;
+    z-index:500;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.65);
+    padding:20px;
+}
+
+.modal-box{
+    background:white;
+    max-width:500px;
+    margin:5% auto;
+    padding:25px;
+    border-radius:15px;
+}
+
+.close{
+    float:right;
+    font-size:28px;
+    cursor:pointer;
+}
+
+.modal-box h2{
+    margin-bottom:20px;
+}
+
+.modal-box input,
+.modal-box textarea{
+    width:100%;
+    padding:12px;
+    margin:8px 0;
+    border:1px solid #ddd;
+    border-radius:8px;
+}
+
+.whatsapp-order{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:8px;
+    background:#25D366;
+    color:white;
+    font-size:17px;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:10px;
+}
+
+/* FOOTER */
+footer{
+    margin-top:50px;
+    background:#111;
+    color:white;
+    text-align:center;
+    padding:30px 15px;
+}
+
+footer p{
+    margin:8px;
+    color:#ccc;
+}
+
+footer a{
+    color:#25D366;
+    text-decoration:none;
+}
+
+/* MOBILE */
+@media(max-width:600px){
+
+    header{
+        padding:14px;
+    }
+
+    .logo{
+        font-size:16px;
+    }
+
+    .whatsapp-top{
+        padding:8px 11px;
+        font-size:12px;
+    }
+
+    .hero h1{
+        font-size:28px;
+    }
+
+    .hero p{
+        font-size:15px;
+    }
+
+    .products{
+        grid-template-columns:repeat(2,1fr);
+        gap:12px;
+    }
+
+    .product img{
+        height:160px;
+    }
+
+    .product-info{
+        padding:12px;
+    }
+
+    .product h3{
+        font-size:16px;
+    }
+
+    .price{
+        font-size:18px;
+    }
+
+    .order-btn{
+        font-size:13px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+
+<div class="logo">
+RBMC <span>●</span>
+</div>
+
+<a class="whatsapp-top"
+href="https://wa.me/923XXXXXXXXX"
+target="_blank">
+WhatsApp
+</a>
+
+</header>
+
+
+<!-- HERO -->
+<section class="hero">
+
+<h1>RAZVI BROTHER MOBILE CENTER</h1>
+
+<p>Quality Mobile Accessories & Products</p>
+
+<button onclick="scrollToProducts()">
+View Products
+</button>
+
+</section>
+
+
+<!-- PRODUCTS -->
+<div class="container">
+
+<h2 class="section-title">
+Our Products
+</h2>
+
+<div class="products">
+
+
+<!-- PRODUCT 1 -->
+<div class="product">
+
+<img src="https://via.placeholder.com/500x500?text=Product+1"
+alt="Product">
+
+<div class="product-info">
+
+<h3>Bluetooth Neckband</h3>
+
+<p class="description">
+High quality Bluetooth neckband with clear sound.
+</p>
+
+<div class="price">
+Rs. 1,499
+</div>
+
+<button class="order-btn"
+onclick="openOrder('Bluetooth Neckband','1499')">
+Order Now
+</button>
+
+</div>
+</div>
+
+
+<!-- PRODUCT 2 -->
+<div class="product">
+
+<img src="https://via.placeholder.com/500x500?text=Product+2"
+alt="Product">
+
+<div class="product-info">
+
+<h3>Fast Charger</h3>
+
+<p class="description">
+Fast charging adapter for smartphones.
+</p>
+
+<div class="price">
+Rs. 999
+</div>
+
+<button class="order-btn"
+onclick="openOrder('Fast Charger','999')">
+Order Now
+</button>
+
+</div>
+</div>
+
+
+<!-- PRODUCT 3 -->
+<div class="product">
+
+<img src="https://via.placeholder.com/500x500?text=Product+3"
+alt="Product">
+
+<div class="product-info">
+
+<h3>Premium Earbuds</h3>
+
+<p class="description">
+Wireless earbuds with powerful sound.
+</p>
+
+<div class="price">
+Rs. 1,799
+</div>
+
+<button class="order-btn"
+onclick="openOrder('Premium Earbuds','1799')">
+Order Now
+</button>
+
+</div>
+</div>
+
+
+<!-- PRODUCT 4 -->
+<div class="product">
+
+<img src="https://via.placeholder.com/500x500?text=Product+4"
+alt="Product">
+
+<div class="product-info">
+
+<h3>Mobile Cable</h3>
+
+<p class="description">
+Strong and durable charging cable.
+</p>
+
+<div class="price">
+Rs. 499
+</div>
+
+<button class="order-btn"
+onclick="openOrder('Mobile Cable','499')">
+Order Now
+</button>
+
+</div>
+</div>
+
+
+</div>
+</div>
+
+
+<!-- ORDER MODAL -->
+
+<div id="orderModal" class="modal">
+
+<div class="modal-box">
+
+<span class="close" onclick="closeOrder()">
+&times;
+</span>
+
+<h2>Place Your Order</h2>
+
+<p id="selectedProduct"></p>
+
+<input id="customerName"
+type="text"
+placeholder="Your Name">
+
+<input id="customerPhone"
+type="tel"
+placeholder="Your Phone Number">
+
+<textarea id="customerAddress"
+rows="4"
+placeholder="Complete Delivery Address"></textarea>
+
+<button class="whatsapp-order"
+onclick="sendOrder()">
+
+Order on WhatsApp
+
+</button>
+
+</div>
+</div>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<h3>RAZVI BROTHER MOBILE CENTER</h3>
+
+<p>Quality Products • Trusted Service</p>
+
+<p>
+WhatsApp:
+<a href="https://wa.me/923XXXXXXXXX"
+target="_blank">
+Chat With Us
+</a>
+</p>
+
+<p>© 2026 RBMC. All Rights Reserved.</p>
+
+</footer>
+
+
+<script>
+
+/* YOUR WHATSAPP NUMBER */
+const whatsappNumber = "923178549856";
+
+let selectedProduct = "";
+let selectedPrice = "";
+
+
+/* OPEN ORDER */
+function openOrder(product,price){
+
+    selectedProduct = product;
+    selectedPrice = price;
+
+    document.getElementById("selectedProduct").innerHTML =
+    "<b>Product:</b> " + product +
+    "<br><b>Price:</b> Rs. " + price;
+
+    document.getElementById("orderModal").style.display="block";
+}
+
+
+/* CLOSE ORDER */
+function closeOrder(){
+
+    document.getElementById("orderModal").style.display="none";
+
+}
+
+
+/* SEND ORDER TO WHATSAPP */
+function sendOrder(){
+
+    const name =
+    document.getElementById("customerName").value;
+
+    const phone =
+    document.getElementById("customerPhone").value;
+
+    const address =
+    document.getElementById("customerAddress").value;
+
+
+    if(name==="" || phone==="" || address===""){
+
+        alert("Please fill all information.");
+
+        return;
+    }
+
+
+    const message =
+    "🛍️ NEW ORDER - RBMC%0A%0A" +
+
+    "📦 Product: " + selectedProduct + "%0A" +
+
+    "💰 Price: Rs. " + selectedPrice + "%0A%0A" +
+
+    "👤 Customer Name: " + name + "%0A" +
+
+    "📞 Phone: " + phone + "%0A" +
+
+    "📍 Address: " + address;
+
+
+    const whatsappURL =
+    "https://wa.me/" +
+    whatsappNumber +
+    "?text=" +
+    message;
+
+
+    window.open(whatsappURL,"_blank");
+
+}
+
+
+/* SCROLL */
+function scrollToProducts(){
+
+    document.querySelector(".container")
+    .scrollIntoView({
+        behavior:"smooth"
+    });
+
+}
+
+
+/* CLOSE MODAL OUTSIDE */
+window.onclick = function(event){
+
+    const modal =
+    document.getElementById("orderModal");
+
+    if(event.target === modal){
+
+        closeOrder();
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
